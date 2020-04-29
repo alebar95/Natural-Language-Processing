@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fake News Checker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Fake News Checker" id="BYZ-38-t0r" customClass="ViewController" customModule="CheckFakeNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eGd-cT-77B">
+                                <rect key="frame" x="20" y="173" width="374" height="620"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZW-eJ-v6Y">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Paste" id="ViG-cO-5px">
+                                        <connections>
+                                            <action selector="onClickPaste:" destination="BYZ-38-t0r" id="ohT-Vn-hbh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Clear" id="2V8-kC-fp9">
+                                        <connections>
+                                            <action selector="onClickClear:" destination="BYZ-38-t0r" id="AAn-S0-esj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kjr-x0-Brx"/>
+                                    <barButtonItem title="Check" id="5rl-89-XYE">
+                                        <connections>
+                                            <action selector="onClickCheck:" destination="BYZ-38-t0r" id="nS8-HX-M0g"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your fake news" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CON-cV-gRU">
+                                <rect key="frame" x="20" y="44" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="FsW-hE-YVQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="UAy-Wx-HsC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wfT-5n-6Dy">
+                                <rect key="frame" x="20" y="112" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Text"/>
+                                    <segment title="People/Place"/>
+                                    <segment title="Part of Speech"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onChangeView:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rqr-ax-Elo"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CON-cV-gRU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2WZ-Dn-Rh9"/>
+                            <constraint firstItem="CON-cV-gRU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="79S-95-e5i"/>
+                            <constraint firstItem="WZW-eJ-v6Y" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7L6-AE-9rl"/>
+                            <constraint firstItem="eGd-cT-77B" firstAttribute="top" secondItem="wfT-5n-6Dy" secondAttribute="bottom" constant="30" id="AQL-fo-CrP"/>
+                            <constraint firstItem="wfT-5n-6Dy" firstAttribute="trailing" secondItem="CON-cV-gRU" secondAttribute="trailing" id="Ddr-c5-3AV"/>
+                            <constraint firstItem="CON-cV-gRU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="MZa-gi-RJq"/>
+                            <constraint firstItem="WZW-eJ-v6Y" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mql-hb-E4T"/>
+                            <constraint firstItem="wfT-5n-6Dy" firstAttribute="top" secondItem="CON-cV-gRU" secondAttribute="bottom" constant="8" id="Pkt-qw-TEF"/>
+                            <constraint firstItem="eGd-cT-77B" firstAttribute="bottom" secondItem="WZW-eJ-v6Y" secondAttribute="top" constant="-20" id="aVq-ZL-SgJ"/>
+                            <constraint firstItem="eGd-cT-77B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bNX-Gx-04h"/>
+                            <constraint firstItem="wfT-5n-6Dy" firstAttribute="leading" secondItem="CON-cV-gRU" secondAttribute="leading" id="f8y-cZ-Ylp"/>
+                            <constraint firstItem="eGd-cT-77B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="rju-RI-Dyz"/>
+                            <constraint firstItem="WZW-eJ-v6Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sha-py-whH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="newsTextView" destination="eGd-cT-77B" id="Il3-Y4-v3v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
