@@ -57,6 +57,20 @@ class ViewController: UIViewController {
             }
         }
     }
+    @IBAction func onClickSentiment(_ sender: Any) {
+        
+        if let news = newsTextView.text {
+            let tagger = NLTagger(tagSchemes: [.sentimentScore])
+            tagger.string = news
+
+            // ask for the results
+            let (sentiment, _) = tagger.tag(at: news.startIndex, unit: .paragraph, scheme: .sentimentScore)
+
+            let score = Double(sentiment?.rawValue ?? "0") ?? 0
+            let output = "Sentiment value: \(score)\nThe range of a sentiment score is [-1.0, 1.0]. A score of 1.0 is the most positive, a score of -1.0 is the most negative, and a score of 0.0 is neutral."
+            showMessage(msg: output)
+        }
+    }
     
     func showMessage(msg: String) {
         let alertController = UIAlertController(title: "FakeNews", message: msg, preferredStyle: .alert)

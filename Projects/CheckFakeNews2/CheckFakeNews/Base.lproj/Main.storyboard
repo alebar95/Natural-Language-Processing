@@ -36,6 +36,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="kjr-x0-Brx"/>
+                                    <barButtonItem title="Sentiment" id="AgW-aU-Xyk">
+                                        <connections>
+                                            <action selector="onClickSentiment:" destination="BYZ-38-t0r" id="Dkd-Dq-2Zk"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Check" id="5rl-89-XYE">
                                         <connections>
                                             <action selector="onClickCheck:" destination="BYZ-38-t0r" id="nS8-HX-M0g"/>
