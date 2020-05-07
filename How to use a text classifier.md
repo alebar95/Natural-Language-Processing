@@ -8,7 +8,7 @@
 
 We started by adding our trained model to an Xcode project. When you do so, Xcode automatically creates a class that has a property of the type MLModel storing the actual model we created, in our case a text classifier model. It’ll also have a method that takes an input and returns an output representing predictions about the former. It goes without saying that a text classifier model will have a text as input. 
 
-![nlmodel view](/images/news-processed.png)
+![nlmodel view](/images/XCode-Model.png)
 
 ## Creating a NLModel object
 
@@ -16,11 +16,11 @@ We can use the model to create a NLModel object. The NLModel class is one of the
 object is built upon a CoreML model. In the screen you can see that its initializer takes an MLModel object as input.
 This class provides a  predictedLabelfor method to generate predictions on new text inputs. It takes the text and returns its prediction. As we initialized it with our MLModel object it will tell apart fake and real news.
 
-![onclick check code](/images/news-processed.png)
+![onclick check code](/images/onClickCheck.png)
 
-![fane news view](/images/news-processed.png)
+![fane news view](/images/demoFake.png)
 
-![real news view](/images/news-processed.png)
+![real news view](/images/demoReal.png)
 
 ## Identifying parts of speech
 
@@ -54,4 +54,4 @@ In the second example [app](https://github.com/alebar95/Natural-Language-Process
 NLTagger class has a ‘string’ property and the news text is assigned to it.
 Then, as shown in the screen, we use the tag method setting as scheme the sentimentScore enum value. This method will return the tag for the sentiment score.
 
-![on click sentiment code](/images/news-processed.png)
+![on click sentiment code](/images/onClickSentiment.png)

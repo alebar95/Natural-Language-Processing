@@ -12,10 +12,10 @@ To create a CreateML model you can use the CreateML software that comes preinsta
 ![Create ML Dashboard](/images/createML_dashboard.png)
 6. To train your model you will have to provide data, so you should have a dataset ready. You can select the data you want to train your model on in the “Data Input” section in the dashboard.
 CreateML uses the folder structure of your dataset to label data. Below you see the folder structure we used for our project. 
-![Example dataset structure](/images/demo.png)
+![Example dataset structure](/images/strutturaFile.png)
 In the “Data Input” section select the “choose” dropdown for the training data and select your training data folder. In our folder structure this would be the folder located at “/Example Fake News    dataset/Train data”.
 CreateML will detect the data labels using the two subfolders “Fake news data” and “Real news data”. All data that is in the subfolder “Fake news data”, will be labeled as fake and the data in the “Real news data” will be labeled as real. In the picture below you can see that CreateML detects two Input Classes, which corresponds to real and fake news.
-![Input classes](/images/demo.png)
+![Input classes](/images/inputClasses.png)
 7. For the “Validation Data” you can leave the dropdown on “Automatic”. With this setting CreateML will take a subset of the training data to validate the model.
 8. For the “Testing Data” click the dropdown and select the training data. In our folder structure this would be the folder located at “/Example Fake News dataset/Test data”. The subfolders should be named the same as the for the training data folder, so the labels will be automatically detected.
 9. Select “Transfer learning” as algorithm and click the button “Train” in the left half of the navigation bar to start training the model. 
