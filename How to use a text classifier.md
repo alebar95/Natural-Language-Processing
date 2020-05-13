@@ -1,3 +1,10 @@
+# What you can find here?
+
+We wrote a documentation about create, train and use a machine learning model that can distinguish a fake news from a real one
+* [**Intro**](README.md) Let's talk about what Machine Learning and Natural Language processing techiques are about
+* [**How to create a text classifier**]((How&#32;to&#32;create&#32;a&#32;text&#32;classifier.md)) Learn how to teach your machine to distinguish a fake news from a real one
+* [**How to use a text classifier**](How&#32;to&#32;use&#32;a&#32;text&#32;classifier.md) **Build your own truth machine app**
+
 # How to use a text classifier made with CreateML
 
 ## Before starting
@@ -16,7 +23,39 @@ We can use the model to create a NLModel object. The NLModel class is one of the
 object is built upon a CoreML model. In the screen you can see that its initializer takes an MLModel object as input.
 This class provides a  predictedLabelfor method to generate predictions on new text inputs. It takes the text and returns its prediction. As we initialized it with our MLModel object it will tell apart fake and real news.
 
-![onclick check code](/images/onClickCheck.png)
+    class ViewController: UIViewController {
+        @IBOutlet weak var newsTextView: UITextView!
+        
+        //MARK:
+        var fakeNewsModel: FakeNewsClassifier!
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            //MARK: Variable
+            fakeNewsModel = FakeNewsClassifier()
+            
+        }
+
+        @IBAction func onClickCheck(_ sender: UIBarButtonItem) {
+            if let news = newsTextView.text {
+                if news.count == 0 {
+                    showMessage(msg: "Copy/Paste the fake news")
+                    return
+                }
+                do {
+                    let labelPredictor = try NLModel(mlModel: self.fakeNewsModel.model)
+                    if let prediction = labelPredictor.predictedLabel(for: news) {
+                        showMessage(msg: prediction)
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
+        
+    }
+
 
 ![fane news view](/images/demoFake.png)
 
@@ -54,4 +93,18 @@ In the second example [app](https://github.com/alebar95/Natural-Language-Process
 NLTagger class has a ‘string’ property and the news text is assigned to it.
 Then, as shown in the screen, we use the tag method setting as scheme the sentimentScore enum value. This method will return the tag for the sentiment score.
 
-![on click sentiment code](/images/onClickSentiment.png)
+    @IBAction func onClickSentiment(_ sender: Any) {
+        
+        if let news = newsTextView.text {
+            let tagger = NLTagger(tagSchemes: [.sentimentScore])
+            tagger.string = news
+
+            // ask for the results
+            let (sentiment, _) = tagger.tag(at: news.startIndex, unit: .paragraph, scheme: .sentimentScore)
+
+            let score = Double(sentiment?.rawValue ?? "0") ?? 0
+            let output = "Sentiment value: \(score)\nThe range of a sentiment score is [-1.0, 1.0]. A score of 1.0 is the most positive, a score of -1.0 is the most negative, and a score of 0.0 is neutral."
+            showMessage(msg: output)
+        }
+    }
+

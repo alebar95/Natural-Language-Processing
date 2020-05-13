@@ -1,4 +1,13 @@
+# What you can find here?
+
+We wrote a documentation about create, train and use a machine learning model that can distinguish a fake news from a real one
+* [**Intro**](README.md) **Let's talk about what Machine Learning and Natural Language processing techiques are about**
+* [**How to create a text classifier**]((How&#32;to&#32;create&#32;a&#32;text&#32;classifier.md)) Learn how to teach your machine to distinguish a fake news from a real one
+* [**How to use a text classifier**](How&#32;to&#32;use&#32;a&#32;text&#32;classifier.md) Build your own truth machine app
+
+
 # How to Build Your Own Truth Machine
+
 
 ## Introduction to Machine learning
 What is Machine Learning?
@@ -70,3 +79,4 @@ A dataset in which a small part of entries is labeled and the remaining part is 
 
 Usually the first approach is used when working with text-based data, while the second and third express their potential with numeric based data. Choosing the approach should be made taking into account also the kind of problem we are trying to solve.
 
+When you're ready you can go to the [Next Step](How&#32;to&#32;create&#32;a&#32;text&#32;classifier.md)

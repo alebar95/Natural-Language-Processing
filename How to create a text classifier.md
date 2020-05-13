@@ -1,3 +1,10 @@
+# What you can find here?
+
+We wrote a documentation about create, train and use a machine learning model that can distinguish a fake news from a real one
+* [**Intro**](README.md) Let's talk about what Machine Learning and Natural Language processing techiques are about
+* [**How to create a text classifier**]((How&#32;to&#32;create&#32;a&#32;text&#32;classifier.md)) **Learn how to teach your machine to distinguish a fake news from a real one**
+* [**How to use a text classifier**](How&#32;to&#32;use&#32;a&#32;text&#32;classifier.md) Build your own truth machine app
+
 # How to create and train a text classifier with CreateML
 
 ## Creation of the Model
@@ -104,3 +111,6 @@ Just select all of the .txt files you need and they will be loaded into CreateML
 ![simple news processed](/images/news-processed.png) 
 
 After this operation it’s time to make our app smarter by implementing the model into our code, the following chapters will guide you through this journey!
+
+
+When you're ready you can go to the [Next Step](How&#32;to&#32;use&#32;a&#32;text&#32;classifier.md)
