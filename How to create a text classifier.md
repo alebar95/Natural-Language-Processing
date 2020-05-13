@@ -89,7 +89,7 @@ I’m talking about **Precision** and **Recall**. These values are useful to und
 
 The following image can give you a perspective on what are **false negatives/positives**, also called: **Type II error** and **Type I error**:
 
-![Type I and II Errors](/images/demo.png) 
+![Type I and II Errors](/images/meme.png) 
 
 If these two parameters meanings are still not clear, let’s have a look at what [this wikipedia page](https://en.wikipedia.org/wiki/Precision_and_recall) says:
 
