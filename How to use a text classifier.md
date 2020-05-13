@@ -22,7 +22,7 @@ We started by adding our trained model to an Xcode project. When you do so, Xcod
 We can use the model to create a NLModel object. The NLModel class is one of the classes of the Natural Language framework, useful to analyze natural language text.  An NLModel
 object is built upon a CoreML model. In the screen you can see that its initializer takes an MLModel object as input.
 This class provides a  predictedLabelfor method to generate predictions on new text inputs. It takes the text and returns its prediction. As we initialized it with our MLModel object it will tell apart fake and real news.
-
+```swift
     class ViewController: UIViewController {
         @IBOutlet weak var newsTextView: UITextView!
         
@@ -55,7 +55,7 @@ This class provides a  predictedLabelfor method to generate predictions on new t
         }
         
     }
-
+```
 
 ![fane news view](/images/demoFake.png)
 
@@ -92,7 +92,7 @@ In the last two paragraphs you saw that you pass an NLTagScheme as a parameter w
 In the second example [app](https://github.com/alebar95/Natural-Language-Processing/tree/master/Projects/CheckFakeNews2) we use an NLTagger with a sentiment score to check the general sentiment value of the news text.
 NLTagger class has a ‘string’ property and the news text is assigned to it.
 Then, as shown in the screen, we use the tag method setting as scheme the sentimentScore enum value. This method will return the tag for the sentiment score.
-
+```swift
     @IBAction func onClickSentiment(_ sender: Any) {
         
         if let news = newsTextView.text {
@@ -107,4 +107,4 @@ Then, as shown in the screen, we use the tag method setting as scheme the sentim
             showMessage(msg: output)
         }
     }
-
+```
