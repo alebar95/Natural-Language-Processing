@@ -57,9 +57,9 @@ This class provides a  predictedLabelfor method to generate predictions on new t
     }
 ```
 
-![fane news view](/images/demoFake.png)
+<img src="./images/demoFake.png" width="250">
 
-![real news view](/images/demoReal.png)
+<img src="./images/demoReal.png" width="250">
 
 ## Identifying parts of speech
 
